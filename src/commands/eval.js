@@ -4,7 +4,7 @@ module.exports = {
     description: 'Evaluar codigos de JavaScript.',
     aliases: ['e'],
     usage: 'eval <codigo>',
-    categoria: 'devs',
+    categoria: 'Devs',
     async execute(message, client, args) {
 
     const Discord = require('discord.js')
