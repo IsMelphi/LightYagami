@@ -2,7 +2,11 @@ require('dotenv').config()
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
+const MongoDB = require('./src/database/main')
+const ModelPrefix = require('./src/database/models/Prefix')
+
 client.commands = new Discord.Collection()
+client.snipes = new Map()
 
 function getDirectorios() {
   return require('fs').readdirSync('./src/commands').filter(function subFolder(file) {
@@ -34,6 +38,18 @@ for (const file of cmdFiles) {
 client.on('ready', () => {
 
   console.log(`Bot Ready 😎, ${client.user.tag} Tiene un eseso de fasha en mas de ${client.guilds.cache.size} servers. 😎`)
+  MongoDB.then(() => console.log('Conectado a MongoDB')).catch(err => {
+    console.error(err)
+  })
+
+})
+
+client.on('messageDelete', (message) => {
+
+  client.snipes.set(message.guild.id, {
+    mensaje: message.content,
+    autor: message.author.tag,
+  })
 
 })
 
