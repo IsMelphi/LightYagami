@@ -12,10 +12,12 @@ module.exports = {
     if(!Snipe) return message.channel.send('No hay mensajes eliminados recientemente.')
 
     const embed = new Discord.MessageEmbed()
-    .setDescription(`Hmm... Una Persona llamada ${Snipe.autor}, elimino un mensaje en ${Snipe.canal}.`)
-    .addField('Autor', Snipe.autor)
-    .addField('Mensaje', Snipe.mensaje)
+    .setDescription(`> Hmm... Una Persona llamada **${Snipe.autor}**, elimino un mensaje en **${Snipe.canal}**.\n\n**Más Información** `)
+    .addField('Autor', Snipe.autor, true)
+    .addField('Mensaje', Snipe.mensaje, true)
+    .addField('Canal', Channel.toString(), true)
     .setColor('EA6959')
+    .setFooter('Seguimos Trabajando Malvada Persona 🕵️')
     message.channel.send(embed)
 
     }
