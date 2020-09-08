@@ -49,6 +49,7 @@ client.on('messageDelete', (message) => {
   client.snipes.set(message.channel.id, {
     mensaje: message.content,
     autor: message.author.tag,
+    canal: message.channel.name
   })
 
 })
