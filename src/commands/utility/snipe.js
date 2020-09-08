@@ -7,7 +7,7 @@ module.exports = {
     execute(message, client, args) {
 
     const Discord = require('discord.js')
-    const Channel = message.channel || message.mentions.channels.first()
+    const Channel =  message.mentions.channels.first() || message.channel
     const Snipe = client.snipes.get(Channel.id)
     if(!Snipe) return message.channel.send('No hay mensajes eliminados recientemente.')
 
