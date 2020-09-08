@@ -54,6 +54,10 @@ client.on('messageDelete', (message) => {
 
 })
 
+client.on('messageUpdate', async (oldMessage, newMessage) => {
+  client.emit('message', 'newMessage')
+})
+
 client.on('message', async (message) => {
 
   const Prefix = 'abyss!'
