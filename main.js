@@ -4,12 +4,30 @@ const client = new Discord.Client()
 
 client.commands = new Discord.Collection()
 
+function getDirectorios() {
+  return require('fs').readdirSync('./src/commands').filter(function subFolder(file) {
+    return require('fs').statSync(`./src/commands/${file}`).isDirectory()
+  })
+}
+
 const cmdFiles = require('fs').readdirSync('./src/commands').filter(file => file.endsWith('.js'))
 
+for (const Folder of getDirectorios()) {
+  const FolderFile = require('fs').readdirSync(`./src/commands/${Folder}`).filter(end => end.endsWith('.js'))
+  for (const File of FolderFile) {
+    cmdFiles.push([Folder, File])
+  }
+}
+
 for (const file of cmdFiles) {
-  const cmd = require(`./src/commands/${file}`)
+  let cmd;
+  if(Array.isArray(file)) {
+    cmd = require(`./src/commands/${file[0]}/${file[1]}`)
+  } else {
+    cmd = require(`./src/commands/${file}`)
+  }
   client.commands.set(cmd.name, cmd)
-  console.log(`Comando ${cmd.name} Listo.`)
+  console.log(`Comando Listo: ${cmd.name}, Categoria: ${file[0]}`)
 }
 
 

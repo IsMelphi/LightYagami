@@ -10,8 +10,8 @@ module.exports = {
     const Discord = require('discord.js')
     const Util = require('util')
 
-    const devs = require('../utils/devs.json').devs
-    const { clean } = require('../utils/nada')
+    const devs = require('../../utils/devs.json').devs
+    const { clean } = require('../../utils/nada')
 
     if (!devs.id.includes(message.author.id)) return;
     if(!args[0]) return;

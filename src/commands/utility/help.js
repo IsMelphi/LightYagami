@@ -16,13 +16,15 @@ module.exports = {
         message.channel.send(embed)
     }
 
-    const cmd = args.shift().toLowerCase()
+    const cmd = args[0]
 
     const embed2 = new Discord.MessageEmbed()
-    .addField('Nombre', client.commands.get(cmd))
-    .addField('Alias', client.commands.get(cmd))
-    .addField('Usage', client.commands.get(cmd))
+    .addField('Nombre', client.commands.get(cmd).name)
+    .addField('Alias', client.commands.get(cmd).aliases ? client.commands.get(cmd).aliases.join(' ') : 'No tiene alias.')
+    .addField('Usage', client.commands.get(cmd).usage)
+    .addField('Categoria', client.commands.get(cmd).categoria)
+    message.channel.send(embed2)
 
 }
 }
-// Alg0
+// Alg0                                                                                                                                                                                                                                                 
