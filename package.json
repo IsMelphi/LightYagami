@@ -12,6 +12,7 @@
   "dependencies": {
     "discord.js": "^12.3.1",
     "dotenv": "^8.2.0",
+    "melphis": "^0.1.7",
     "mongoose": "^5.10.3"
   }
 }
