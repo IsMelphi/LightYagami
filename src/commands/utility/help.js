@@ -3,7 +3,7 @@ module.exports = {
     description: 'Información de los Comandos.',
     aliases: [],
     usage: 'help <comando>',
-    categoria: 'Información',
+    categoria: 'Utilidad',
     execute(message, client, args) {
 
     const Discord = require('discord.js')

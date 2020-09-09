@@ -3,7 +3,7 @@ module.exports = {
     description: 'Ver mensajes eliminados',
     usage: 'snipe | snipe <canal>',
     aliases: [],
-    categoria: 'Información',
+    categoria: 'Utilidad',
     execute(message, client, args) {
 
     const Discord = require('discord.js')

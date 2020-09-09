@@ -3,7 +3,7 @@ module.exports = {
     description: 'Muestra el avatar de un Usuario',
     aliases: [],
     usage: 'avatar <usuario> | avatar',
-    categoria: 'Información',
+    categoria: 'Utilidad',
     execute(message, client, args) {
 
     const Discord = require('discord.js')
