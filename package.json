@@ -1,5 +1,5 @@
 {
-  "name": "Mapeos",
+  "name": "Abismo",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Melphi",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.3.1",
