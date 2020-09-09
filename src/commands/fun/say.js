@@ -10,6 +10,8 @@ module.exports = {
         return message.channel.send('Debes escribir un Mensaje.')
     }
     
+    if(message.deletable) message.delete
+
     message.channel.send(args.join(' '), { disableMentions: 'all' })
 }
 }
