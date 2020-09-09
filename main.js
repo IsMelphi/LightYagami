@@ -34,7 +34,6 @@ for (const file of cmdFiles) {
   console.log(`Comando Listo: ${cmd.name}, Categoria: ${file[0]}`)
 }
 
-
 client.on('ready', () => {
 
   console.log(`Bot Ready 😎, ${client.user.tag} Tiene un eseso de fasha en mas de ${client.guilds.cache.size} servers. 😎`)
@@ -60,9 +59,11 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 
 client.on('message', async (message) => {
 
-  const Prefix = 'abyss!'
-
   if(message.author.bot) return;
+
+  const PrePrefix = await ModelPrefix.findOne({ GuildID: message.guild.id }).exec()
+  const Prefix = PrePrefix ? PrePrefix.Prefix : 'abyss!'
+
   if(!message.content.startsWith(Prefix)) return;
 
   const args = message.content.slice(Prefix.length).trim().split(/ +/)
