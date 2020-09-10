@@ -62,7 +62,7 @@ client.on('message', async (message) => {
   if(message.author.bot) return;
 
   const PrePrefix = await ModelPrefix.findOne({ GuildID: message.guild.id }).exec()
-  const Prefix = PrePrefix ? PrePrefix.Prefix : 'abyss!'
+  const Prefix = PrePrefix ? PrePrefix.Prefix : 'lg!'
 
   if(!message.content.startsWith(Prefix)) return;
 

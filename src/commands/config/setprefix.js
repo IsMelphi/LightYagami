@@ -11,15 +11,11 @@ module.exports = {
     const { devs } = require('../../utils/devs.json')
 
     const PrefixGuild = await ModelPrefix.findOne({ GuildID: message.guild.id }).exec()
-    const Prefix = PrefixGuild ? PrefixGuild.Prefix : 'abyss!'
+    const Prefix = PrefixGuild ? PrefixGuild.Prefix : 'lg!'
 
     const Permisos = message.member.hasPermission('MANAGE_GUILD') || devs.id.includes(message.author.id)
     if(!Permisos) {
-        const embed = new Discord.MesssageEmbed()
-        .setAuthor(message.author.tag, message.author.displayAvatarURL({ size: 2048, dynamic: true, format: 'png' }))
-        .setDescription('No tienes los permisos suficientes para usar este Comando.')
-        .setFooter('Para usar este comando necesitas Permiso de Gestionar Servidor')
-        return message.channel.send(embed)
+        return message.channel.send('Vaya vaya... No tienes permisos suficientes para usar este comando. ')
     }
 
     if(args[0] === Prefix) {
