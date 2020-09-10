@@ -15,7 +15,7 @@ module.exports = {
 
     const Permisos = message.member.hasPermission('MANAGE_GUILD') || devs.id.includes(message.author.id)
     if(!Permisos) {
-        return message.channel.send('Vaya vaya... No tienes permisos suficientes para usar este comando. <:Light_2:753483899069530172>')
+        return message.channel.send('No tienes permisos suficientes para usar este comando. <:Light_2:753483899069530172>')
     }
 
     if(args[0] === Prefix) {
