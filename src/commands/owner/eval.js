@@ -11,7 +11,7 @@ module.exports = {
     const Util = require('util')
 
     const devs = require('../../utils/devs.json').devs
-    const { clean } = require('../../utils/nada')
+    const { clean } = require('../../utils/Clean')
 
     if (!devs.id.includes(message.author.id)) return;
     if(!args[0]) return;

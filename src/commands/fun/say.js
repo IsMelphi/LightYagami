@@ -1,4 +1,4 @@
-module.exports = {
+                    module.exports = {
     name: 'say',
     description: 'Repite tu texto',
     usage: 'say <texto>',

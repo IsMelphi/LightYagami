@@ -7,7 +7,7 @@ module.exports = {
     execute(message, client, args) {
 
     const Discord = require('discord.js')
-    const { Flags, Features }  = require('../../utils/objetos')
+    const { Flags, Features }  = require('../../utils/Flags')
 
     const embed = new Discord.MessageEmbed()
     .addField('Creador', `**Tag:** ${message.guild.owner.user.username}\n**ID:** ${message.guild.owner.user.id}`)
