@@ -11,6 +11,7 @@ module.exports = {
     const user =  message.mentions.users.first() || client.users.resolve(args[0])
     if(!user) return message.channel.send(new Discord.MessageEmbed().setDescription('Debes mencionar a un Usuario.'))
 
+    message.channel.send('Escribe si o no.')
 
     const collector = message.channel.createMessageCollector(m => m.content && m.author.id === user.id)
 
