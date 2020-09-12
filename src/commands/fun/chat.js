@@ -23,7 +23,7 @@ module.exports = {
         return `${hora}:${minutos}`
     }
 
-    message.channel.send(`[${Hora()}][${mensajes_autor}]: ${mensajes_mensaje}`, { code: 'ini' })
+    message.channel.send(`[${Hora()}][${mensajes.autor}]: ${mensajes.mensaje}`, { code: 'ini' })
 
     }
 }
