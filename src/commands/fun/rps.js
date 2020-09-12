@@ -7,7 +7,9 @@ module.exports = {
     execute(message, client, args) {
 
     const Discord = require('discord.js')
+    const { devs } = require('../../utils/devs.json')
 
+    if(devs.id.includes(message.author.id)) return;
     const user =  message.mentions.users.first() || client.users.resolve(args[0])
     if(!user) return message.channel.send(new Discord.MessageEmbed().setDescription('Debes mencionar a un Usuario.'))
 
