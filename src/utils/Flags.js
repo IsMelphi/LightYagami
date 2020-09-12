@@ -32,5 +32,17 @@ module.exports = {
         'VERIFIED' : 'Verificado',
         'VIP_REGIONS' : 'Región VIP',
         'WELCOME_SCREE_ENABLED' : 'Pantalla de Bievenida'
+    },
+    Notificaciones: {
+        'ALL':'Todos los mensajes',
+        'MENTIONS':'Solo @mentions'
+    },
+    Verificacion: {
+        'NONE':'Ninguno',
+        'LOW':'Bajo',
+        'MEDIUM':'Medio',
+        'HIGH':'Alto',
+        'VERY_HIGH':'Muy Alto'
     }
+
 }
