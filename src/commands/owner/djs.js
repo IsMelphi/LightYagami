@@ -1,6 +1,6 @@
 module.exports = {
     name: 'djs',
-    aliases: [],
+    aliases: ['docs'],
     description: 'Discord.js Docs',
     usage: 'djs <...>',
     categoria: 'Devs',

@@ -2,7 +2,7 @@ module.exports = {
     name: 'serverinfo',
     description: 'Información del Servidor',
     usage: 'serverinfo',
-    aliases: [],
+    aliases: ['sv'],
     categoria: 'Información',
     execute(message, client, args) {
 

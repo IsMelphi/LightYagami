@@ -1,7 +1,7 @@
 module.exports = {
     name: 'help',
     description: 'Información de los Comandos.',
-    aliases: [],
+    aliases: ['ayuda'],
     usage: 'help <comando>',
     categoria: 'Utilidad',
     execute(message, client, args) {

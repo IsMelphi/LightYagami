@@ -2,7 +2,7 @@ module.exports = {
     name: 'setprefix',
     description: 'Cambiar de Prefix a Abismo.',
     usage: 'setprefix <prefix>',
-    aliases: [],
+    aliases: ['sp'],
     categoria: 'Configuración',
     async execute(message, client, args) {
 
@@ -19,7 +19,7 @@ module.exports = {
     }
 
     if(args[0] === Prefix) {
-        return message.channel.send('Ya esta puesto ese prefix...')
+        return message.channel.send('El Prefix que a puesto, ya esta en el Servidor')
     }
 
     if(args[0].length >= 4) {

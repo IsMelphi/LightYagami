@@ -1,7 +1,7 @@
 module.exports = {
     name: 'avatar',
     description: 'Muestra el avatar de un Usuario',
-    aliases: [],
+    aliases: ['pfp'],
     usage: 'avatar <usuario> | avatar',
     categoria: 'Utilidad',
     execute(message, client, args) {

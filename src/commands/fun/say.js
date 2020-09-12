@@ -2,7 +2,7 @@
     name: 'say',
     description: 'Repite tu texto',
     usage: 'say <texto>',
-    aliases: [],
+    aliases: ['decir'],
     categoria: 'Diversión',
     execute(message, client, args) {
 
