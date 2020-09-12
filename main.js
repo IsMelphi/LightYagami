@@ -7,6 +7,7 @@ const ModelPrefix = require('./src/database/models/Prefix')
 
 client.commands = new Discord.Collection()
 client.snipes = new Map()
+client.editsnipes = new Map()
 
 function getDirectorios() {
   return require('fs').readdirSync('./src/commands').filter(function subFolder(file) {
@@ -55,6 +56,14 @@ client.on('messageDelete', (message) => {
 
 client.on('messageUpdate', async (oldMessage, newMessage) => {
   client.emit('message', newMessage)
+
+  client.editsnipes.set(newMessage.channel.id, {
+    mensaje_nuevo: newMessage.content,
+    mensaje_viejo: oldMessage.content,
+    autor: newMessage.author.tag,
+    canal: newMessage.channel.name
+  })
+
 })
 
 client.on('message', async (message) => {
