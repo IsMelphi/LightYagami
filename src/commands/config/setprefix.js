@@ -18,6 +18,10 @@ module.exports = {
         return message.channel.send('No tienes permisos suficientes para usar este comando. <:Light_2:753483899069530172>')
     }
 
+    if(!args[0]) {
+        return message.channel.send(new Discord.MessageEmbed().setDescription('Debes colocar un Prefix.'))
+    }
+
     if(args[0] === Prefix) {
         return message.channel.send('El Prefix que a puesto, ya esta en el Servidor')
     }
