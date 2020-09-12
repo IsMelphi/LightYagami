@@ -11,6 +11,7 @@ const ModelPrefix = require('./src/database/models/Prefix')
 client.commands = new Discord.Collection()
 client.snipes = new Map()
 client.editsnipes = new Map()
+client.chat = new Map()
 
 function getDirectorios() {
   return require('fs').readdirSync('./src/commands').filter(function subFolder(file) {
