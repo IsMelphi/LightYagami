@@ -6,8 +6,7 @@ module.exports = {
     categoria: 'diversion',
     execute(message, client, args) {
 
-    const meme = require('../../utils/Meme').meme()
-    message.channel.send({ files: [ meme ] })
+    message.channel.send({ files: [ require('melphiworker').meme() ] })
 
     }
 }
