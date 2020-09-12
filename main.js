@@ -77,6 +77,11 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
 
 })
 
+client.on('guildDelete', async (guild) => {
+  await ModelPrefix.deleteOne({ GuildID: guild.id })
+  console.log('Prefix Eliminado.')
+})
+
 client.on('message', async (message) => {
 
   if(message.author.bot) return;
