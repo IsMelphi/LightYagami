@@ -2,6 +2,12 @@ require('dotenv').config()
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
+const ascii = require('ascii-table')
+const table = new ascii().setHeading('Comando', 'Carpeta')
+
+const Captain = require('captainjs')
+console = new Captain.Console()
+
 const MongoDB = require('./src/database/main')
 const ModelPrefix = require('./src/database/models/Prefix')
 
@@ -32,19 +38,22 @@ for (const file of cmdFiles) {
     cmd = require(`./src/commands/${file}`)
   }
   client.commands.set(cmd.name, cmd)
-  console.log(`Comando Listo: ${cmd.name}, Categoria: ${file[0]}`)
-}
+  table.addRow(cmd.name, file[0])
+  console.log(table.toString())
+} 
 
 client.on('ready', () => {
 
-  console.log(`Bot Ready 😎, ${client.user.tag} Tiene un eseso de fasha en mas de ${client.guilds.cache.size} servers. 😎`)
-  MongoDB.then(() => console.log('Conectado a MongoDB')).catch(err => {
+  console.log(`§bBot Ready 😎, ${client.user.tag} Tiene un eseso de fasha en mas de ${client.guilds.cache.size} servers. 😎`)
+  MongoDB.then(() => console.log('§bConectado a MongoDB')).catch(err => {
     console.error(err)
   })
 
 })
 
 client.on('messageDelete', (message) => {
+
+  if(message.author.bot) return;
 
   client.snipes.set(message.channel.id, {
     mensaje: message.content,
@@ -55,7 +64,9 @@ client.on('messageDelete', (message) => {
 })
 
 client.on('messageUpdate', async (oldMessage, newMessage) => {
-  client.emit('message', newMessage)
+
+  if(oldMessage.author.bot) return;
+  if(newMessage.author.bot) return;
 
   client.editsnipes.set(newMessage.channel.id, {
     mensaje_nuevo: newMessage.content,
