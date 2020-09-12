@@ -15,7 +15,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
     .setDescription(`> Hmm... Una Persona llamada **${Snipe.autor}**, elimino un mensaje en **${Snipe.canal}**.\n\n**Más Información** `)
     .addField('Autor', Snipe.autor, true)
-    .addField('Mensaje', Snipe.mensaje, true)
+    .addField('Mensaje', Snipe.mensaje ? false : 'Sin Mensaje.', true)
     .addField('Canal', Channel.toString(), true)
     .setColor('EA6959')
     .setFooter('Seguimos invegistigando sus Mensajes 🕵️')

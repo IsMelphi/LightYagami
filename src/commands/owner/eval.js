@@ -29,12 +29,13 @@ module.exports = {
         output = `${output.substr(0, 1010)}...`;
     }
                 
+
     let embed2 = new Discord.MessageEmbed()
     .setAuthor('Evaluacion Correcta! '+message.author.tag , message.author.displayAvatarURL({ size: 2048, dynamic: true, format: 'png'}))
     .addField('Evaluado en', `\`\`\`yaml\n${client.ws.ping}ms\n\`\`\``, true)
     .addField('Tipo', `\`\`\`prolog\n${type.substring(0, 1).toUpperCase() + type.substring(1)}\n\`\`\``, true)
     .addField('Entrada', `\`\`\`js\n${args.join(' ')}\n\`\`\``)
-    .addField('Salida', `\`\`\`js\n${output}\n\`\`\``)
+    .addField('Salida', `\`\`\`js\n${output.replace(process.env.DISCORD_TOKEN, 'ADONDE IBAS MASTER 😎')}\n\`\`\``)
     .setColor('RANDOM')
     message.channel.send(embed2)
                 
