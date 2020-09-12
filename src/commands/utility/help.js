@@ -4,13 +4,16 @@ module.exports = {
     aliases: ['ayuda'],
     usage: 'help <comando>',
     categoria: 'Utilidad',
-    execute(message, client, args) {
+    async execute(message, client, args) {
 
     const Discord = require('discord.js')
+    const Model = require('../../database/models/Prefix')
+    const Prefix = await Model.findOne( { GuildID: message.guild.id } ).exec()
+    const prefix = Prefix ? Prefix.prefix : 'lg!'
 
     if(!args[0]) {
         const embed = new Discord.MessageEmbed()
-        .setDescription(`!Hola ${message.member.displayName}! Mi nombre es Abismo, pero puedes llamarme como quieras. Yo soy un bot creado para entretenerte y ayudar a tu Server.\nPuedes ver toda la información de un comando con \`abyss!help <comando>\`\n\nTotal de Comandos: ${client.commands.size}`)
+        .setDescription(`!Hola ${message.member.displayName}! Mi nombre es Light Yagami, pero puedes llamarme como quieras. Yo soy un bot creado para entretenerte y ayudar a tu Server.\nPuedes ver toda la información de un comando con \`${prefix}help <comando>\`\n\nTotal de Comandos: ${client.commands.size}`)
         .addField('Comandos de Información', '`help` `avatar` `snipe` `editsnipe` `serverinfo`')
         .addField('Comandos de Diversión', '`say` `meme`')
         .addField('Comandos de Configuración', '`setprefix`')
@@ -25,6 +28,7 @@ try {
     .addField('Alias', client.commands.get(args[0]).aliases[0] ? client.commands.get(args[0]).aliases.join(' ') : 'No tiene alias.')
     .addField('Usage', client.commands.get(args[0]).usage)
     .addField('Categoria', client.commands.get(args[0]).categoria)
+    .setColor('RANDOM')
     message.channel.send(embed2)
 
 } catch(err) {
