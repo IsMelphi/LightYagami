@@ -8,7 +8,7 @@ module.exports = {
 
     const Discord = require('discord.js')
     const Model = require('../../database/models/Prefix')
-    const Prefix = await Model.findOne( { GuildID: message.guild.id } ).exec()
+    const Prefix = await Model.findOne({ GuildID: message.guild.id }).exec()
     const prefix = Prefix ? Prefix.prefix : 'lg!'
 
     if(!args[0]) {
