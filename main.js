@@ -84,6 +84,10 @@ client.on('message', async (message) => {
   const PrePrefix = await ModelPrefix.findOne({ GuildID: message.guild.id }).exec()
   const Prefix = PrePrefix ? PrePrefix.Prefix : 'lg!'
 
+  if(message.content.startsWith(`^<@!?${client.user.id}>( |)$`)) {
+    return message.channel.send(new Discord.MessageEmbed().setDescription(`Mi Prefix en este server es **${Prefix}**.`).setColor('RANDOM'))
+  }
+
   if(!message.content.startsWith(Prefix)) return;
 
   const args = message.content.slice(Prefix.length).trim().split(/ +/)
