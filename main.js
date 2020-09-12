@@ -5,9 +5,6 @@ const client = new Discord.Client()
 const ascii = require('ascii-table')
 const table = new ascii().setHeading('Comando', 'Carpeta')
 
-const Captain = require('captainjs')
-console = new Captain.Console()
-
 const MongoDB = require('./src/database/main')
 const ModelPrefix = require('./src/database/models/Prefix')
 
@@ -44,7 +41,7 @@ for (const file of cmdFiles) {
 
 client.on('ready', () => {
 
-  console.log(`§bBot Ready 😎, ${client.user.tag} Tiene un eseso de fasha en mas de ${client.guilds.cache.size} servers. 😎`)
+  console.log(`Bot Ready 😎, ${client.user.tag} Tiene un eseso de fasha en mas de ${client.guilds.cache.size} servers. 😎`)
   MongoDB.then(() => console.log('§bConectado a MongoDB')).catch(err => {
     console.error(err)
   })
