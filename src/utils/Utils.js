@@ -24,5 +24,14 @@ module.exports = {
         }
 
         return `${Hora}:${Minuto}`
+    },
+
+    dias: function Dias(date) {
+        const Fecha = new Date()
+        const Tiempo = Fecha.getTime() - date.getTime()
+        const Resta = (Tiempo / 86400000)
+
+        return `${Resta} Dias`
+
     }
 }
