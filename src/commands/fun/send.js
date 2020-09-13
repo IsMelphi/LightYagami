@@ -7,9 +7,11 @@ module.exports = {
     execute(message, client, args) {
 
     const Discord = require('discord.js')
- 
+    const links = args.join(' ').match(/[https://discord.gg]/ig)
+
+
     if(!args[0]) return message.channel.send(new Discord.MessageEmbed().setDescription('Que mensajes enviaras?'))
-    if(args.join(' ') === 'https://discord.gg/tdt5Ss') return message.channel.send(new Discord.MessageEmbed().setDescription('Links :('))
+    if(links) return message.channel.send(new Discord.MessageEmbed().setDescription('Links :('))
 
     const Objeto = { autor: message.author.tag, mensaje: args.join(' ') }
 
