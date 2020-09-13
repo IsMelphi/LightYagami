@@ -20,7 +20,7 @@ module.exports = {
     .addField('Mensaje', Snipe.mensaje, true)
     .addField('Canal', Channel.toString(), true)
     .setColor('EA6959')
-    .setFooter('Seguimos invegistigando sus Mensajes 🕵️')
+    .setFooter('Seguimos Investigando sus Mensajes en busqueda de Kira.')
     message.channel.send(embed)
 
     } catch (err) {
