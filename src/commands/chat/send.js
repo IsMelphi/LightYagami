@@ -14,7 +14,7 @@ module.exports = {
 
     if(['discord.gg', 'https://discord.gg/'].some(link => message.content.toLowerCase().includes(link))) {
         if(message.deletable) message.delete()
-        return message.channel.send(new Discord.MessageEmbed().setDescription('¡¿Piensas hacer spam en mi Chat? Novato.?! XD').setColor('RANDOM'))
+        return message.channel.send(new Discord.MessageEmbed().setDescription('¿Piensas hacer spam en mi Chat? Novato? XD').setColor('RANDOM'))
     }
 
     if(['```', '`'].some(bug => message.content.toLowerCase().includes(bug))) {
