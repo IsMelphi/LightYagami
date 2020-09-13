@@ -8,9 +8,6 @@ const table = new ascii().setHeading('Comando', 'Carpeta')
 const MongoDB = require('./src/database/main')
 const ModelPrefix = require('./src/database/models/Prefix')
 
-const SQlite = require('sqlite3').verbose()
-const db = new SQlite.Database('./Yagami.sqlite')
-
 client.commands = new Discord.Collection()
 client.snipes = new Map()
 client.editsnipes = new Map()
