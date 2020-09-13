@@ -11,10 +11,8 @@ module.exports = {
 
     if(!args[0]) return message.channel.send(new Discord.MessageEmbed().setDescription('Que mensajes enviaras?'))
 
-    const Objeto = { autor: message.author.tag, mensaje: args.join(' '), hora: Hora }
-
     if(!client.chat.has(message.guild.id)) client.chat.set(message.guild.id, [])
-    client.chat.get(message.guild.id).push(Objeto)
+    client.chat.get(message.guild.id).push({autor: message.author.tag, mensaje: args.join(' '), hora: Hora})
 
     message.channel.send(new Discord.MessageEmbed().setDescription('Mensaje Enviado'))
 

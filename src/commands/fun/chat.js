@@ -13,7 +13,7 @@ module.exports = {
     
     const mensaje = chat.map(mensaje => mensaje.mensaje).reverse().join('\n')
 
-    message.channel.send(`${chat.map(x => `[${x.hora}${x.autor}]: ${mensaje}`).reverse().join('\n')}`, { code: 'ini' })
+    message.channel.send(`${chat.map(x => `[${x.hora}][${x.autor}]: ${x.mensaje}`).reverse().join('\n')}`, { code: 'ini' })
 
     }
 }
