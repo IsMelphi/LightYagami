@@ -1,6 +1,6 @@
 require('dotenv').config()
 const Discord = require('discord.js')
-const client = new Discord.Client()
+const client = new Discord.Client( { ws: { properties: { $browser: 'Discord Android' } } } )
 
 const ascii = require('ascii-table')
 const table = new ascii().setHeading('Comando', 'Carpeta')
@@ -46,7 +46,6 @@ client.on('ready', () => {
   MongoDB.then(() => console.log('§bConectado a MongoDB')).catch(err => {
     console.error(err)
   })
-
 })
 
 client.on('messageDelete', (message) => {
