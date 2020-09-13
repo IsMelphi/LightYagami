@@ -16,8 +16,9 @@ module.exports = {
     .then(m => m.delete( { timeout: 4000 } ))
 
     const embed = new Discord.MessageEmbed()
-    .setDescription(`Alguien a editado su Mensaje... ¿Sera Kira?... el autor es **${editsnipe.autor}**.`)
-   .addField('\u200b', `> Mensaje Antes: **${editsnipe.mensaje_viejo}**\n> Mensaje Nuevo: **${editsnipe.mensaje_nuevo}**\n> Autor: **${editsnipe.autor}**\n> Canal: **${editsnipe.canal}**`)
+    .setDescription(`Alguien a editado su Mensaje... ¿Sera Kira?... el autor era **${editsnipe.autor}**.`)
+   .addField('Datos', `> Mensaje Antes: **${editsnipe.mensaje_viejo}**\n> Mensaje Nuevo: **${editsnipe.mensaje_nuevo}**\n> Autor: **${editsnipe.autor}**\n> Canal: **${editsnipe.canal}**`)
+   .setColor('')
    message.channel.send(embed)
     }
 }
