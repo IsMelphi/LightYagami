@@ -12,8 +12,8 @@ module.exports = {
     if(!chat) return message.channel.send(new Discord.MessageEmbed().setDescription('No hay mensajes en este Servidor.'))
 
     const embed = new Discord.MessageEmbed()
-    .setDescription(`\`\`\`ini\n${chat.map(x => `[${x.hora}][${x.autor}] : ${x.mensaje}`).reverse().join('\n')}\n\`\`\``)
-    .setColor('RANDOM')
+    .setDescription(`\`\`\`ini\n${chat.map(x => `[${x.hora}][${x.autor}]: ${x.mensaje}`).reverse().join('\n')}\n\`\`\``)
+    .setColor('FFD788')
     message.channel.send(embed)
 
     }
