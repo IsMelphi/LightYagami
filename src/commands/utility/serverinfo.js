@@ -10,6 +10,7 @@ module.exports = {
     const { Flags, Features, Notificaciones, Verificacion }  = require('../../utils/Flags')
 
     const embed = new Discord.MessageEmbed()
+    .setAuthor(`Información de ${message.guild.name}`, message.guild.displayIconURL({ size: 2048, format: 'png', dynamic: true }))
     .addField('Creador', `**Tag:** ${message.guild.owner.user.username}\n**ID:** ${message.guild.owner.user.id}`)
     
     if(message.guild.premiumTier) {
