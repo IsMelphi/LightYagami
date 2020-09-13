@@ -13,12 +13,14 @@ module.exports = {
     .then(m => m.delete( { timeout: 4000 } ))
 
     if(['discord.gg', 'https://discord.gg/'].some(link => message.content.toLowerCase().includes(link))) {
-        message.delete()
+        if(message.deletable) message.delete()
         return message.channel.send(new Discord.MessageEmbed().setDescription('Links :('))
     }
 
     if(!client.chat.has(message.guild.id)) client.chat.set(message.guild.id, [])
     client.chat.get(message.guild.id).push({autor: message.author.tag, mensaje: args.join(' '), hora: Hora})
+
+    if(message.deletable) message.delete()
 
     message.channel.send(new Discord.MessageEmbed().setDescription('Mensaje Enviado').setColor('FA8859'))
 
