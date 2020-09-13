@@ -43,7 +43,7 @@ for (const file of cmdFiles) {
 client.on('ready', () => {
 
   console.log(`Bot Ready 😎, ${client.user.tag} Tiene un eseso de fasha en mas de ${client.guilds.cache.size} servers. 😎`)
-  MongoDB.then(() => console.log('§bConectado a MongoDB')).catch(err => {
+  MongoDB.then(() => console.log('Conectado a MongoDB')).catch(err => {
     console.error(err)
   })
 })
