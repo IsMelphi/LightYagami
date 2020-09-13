@@ -4,7 +4,7 @@ module.exports = {
     usage: 'mute <usuario>',
     categoria: 'Moderación',
     aliases: [],
-    execute(message, client, args) {
+    async execute(message, client, args) {
 
     const Discord = require('discord.js')
 
