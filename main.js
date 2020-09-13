@@ -8,6 +8,9 @@ const table = new ascii().setHeading('Comando', 'Carpeta')
 const MongoDB = require('./src/database/main')
 const ModelPrefix = require('./src/database/models/Prefix')
 
+const SQlite = require('sqlite3').verbose()
+const db = new SQlite.Database('./Yagami.sqlite')
+
 client.commands = new Discord.Collection()
 client.snipes = new Map()
 client.editsnipes = new Map()
@@ -81,7 +84,7 @@ client.on('guildDelete', async (guild) => {
 
 client.on('message', async (message) => {
 
-  if(message.author.bot) return
+  if(message.author.bot) return;
 
   const PrePrefix = await ModelPrefix.findOne({ GuildID: message.guild.id }).exec()
   const Prefix = PrePrefix ? PrePrefix.Prefix : 'lg!'
