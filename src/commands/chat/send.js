@@ -14,11 +14,11 @@ module.exports = {
 
     if(['discord.gg', 'https://discord.gg/'].some(link => message.content.toLowerCase().includes(link))) {
         if(message.deletable) message.delete()
-        return message.channel.send(new Discord.MessageEmbed().setDescription('Links :(').setColor('RANDOM'))
+        return message.channel.send(new Discord.MessageEmbed().setDescription('¡Piensas hacer spam en mi Chat? Novato.').setColor('RANDOM'))
     }
 
     if(['```', '`'].some(bug => message.content.toLowerCase().includes(bug))) {
-        return message.channel.send(new Discord.MessageEmbed().setDescription('¿Crees bugear mi chat? xd').setColor('RANDOM'))
+        return message.channel.send(new Discord.MessageEmbed().setDescription('¿Crees bugear mi Chat? xd').setColor('RANDOM'))
     }
 
     if(!client.chat.has(message.guild.id)) client.chat.set(message.guild.id, [])
