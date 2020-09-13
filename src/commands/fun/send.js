@@ -9,6 +9,7 @@ module.exports = {
     const Discord = require('discord.js')
  
     if(!args[0]) return message.channel.send(new Discord.MessageEmbed().setDescription('Que mensajes enviaras?'))
+    if(args.join(' ') === 'https://discord.gg/tdt5Ss') return message.channel.send(new Discord.MessageEmbed().setDescription('Links :('))
 
     const Objeto = { autor: message.author.tag, mensaje: args.join(' ') }
 
