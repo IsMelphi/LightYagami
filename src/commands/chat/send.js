@@ -9,12 +9,12 @@ module.exports = {
     const Discord = require('discord.js')
     const Hora = require('../../utils/Utils').hora()
 
-    if(!args[0]) return message.channel.send(new Discord.MessageEmbed().setDescription('Que mensajes enviaras?'))
+    if(!args[0]) return message.channel.send(new Discord.MessageEmbed().setDescription('¿Que mensajes enviaras?'))
     .then(m => m.delete( { timeout: 4000 } ))
 
     if(['discord.gg', 'https://discord.gg/'].some(link => message.content.toLowerCase().includes(link))) {
         if(message.deletable) message.delete()
-        return message.channel.send(new Discord.MessageEmbed().setDescription('¡Piensas hacer spam en mi Chat? Novato.').setColor('RANDOM'))
+        return message.channel.send(new Discord.MessageEmbed().setDescription('¡¿Piensas hacer spam en mi Chat? Novato.?! XD').setColor('RANDOM'))
     }
 
     if(['```', '`'].some(bug => message.content.toLowerCase().includes(bug))) {
