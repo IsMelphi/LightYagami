@@ -8,8 +8,8 @@ module.exports = {
 
     const Discord = require('discord.js')
 
-    if(!message.member.hasPermissions('MANAGE_ROLES')) return message.channel.send(new Discord.MessageEmbed().setDescription('No tienes permisos suficientes para usar este Comando.'))
-    if(!message.guild.me.hasPermissions('MANAGE_ROLES')) return message.channel.send(new Discord.MessageEmbed().setDescription('No tengo permisos para crear Roles o agregar Roles'))
+    if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(new Discord.MessageEmbed().setDescription('No tienes permisos suficientes para usar este Comando.'))
+    if(!message.guild.me.hasPermission('MANAGE_ROLES')) return message.channel.send(new Discord.MessageEmbed().setDescription('No tengo permisos para crear Roles o agregar Roles'))
 
     const User = message.mentions.members.first() 
     if(!User) return message.channel.send(new Discord.MessageEmbed().setDescription('Debes Mencionar a un Usuario.'))
