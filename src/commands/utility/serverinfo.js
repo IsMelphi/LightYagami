@@ -20,8 +20,8 @@ module.exports = {
         embed.addField('Features', `\`\`\`\n${message.guild.features.map(x => Features[x]).join(', ')}\n\`\`\``)
     }
 
-    embed.addField('Servidor', `Notificaciones: **${Notificaciones[message.guild.defaultMessageNotifications]}**\nCreado el: **${Intl.DateTimeFormat({ dateStyle: "short" }).format(message.guild.createdAt)}**\nVerificación: **${Verificacion[message.guild.verificationLevel]}**\nRegión: **${Flags[message.guild.region]}**`)
-    .addField('Estadisticas del Servidor', `Canales: **${message.guild.channels.cache.size}**\nMiembros: **${message.guild.memberCount}**\nEmojis: **${message.guild.emojis.cache.size}**\nRoles: **${message.guild.roles.cache.size}**`)
+    embed.addField('Servidor', `Notificaciones: **${Notificaciones[message.guild.defaultMessageNotifications]}**\nCreado el: **${Intl.DateTimeFormat({ dateStyle: "short" }).format(message.guild.createdAt)}**\nVerificación: **${Verificacion[message.guild.verificationLevel]}**\nRegión: **${Flags[message.guild.region]}**`, true)
+    .addField('Estadisticas del Servidor', `Canales: **${message.guild.channels.cache.size}**\nMiembros: **${message.guild.memberCount}**\nEmojis: **${message.guild.emojis.cache.size}**\nRoles: **${message.guild.roles.cache.size}**`, true)
     .setImage( message.guild.bannerURL( { size: 2048, dynamic: true, format: 'png' } ) || message.guild.splashURL( { size: 2048, dynamic: true, format: 'png' } ) || message.guild.iconURL( { size: 2048, dynamic: true, format: 'png' } ))
     .setColor('RANDOM')
     message.channel.send(embed)
