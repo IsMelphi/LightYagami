@@ -12,9 +12,14 @@ module.exports = {
     if(!chat) return message.channel.send(new Discord.MessageEmbed().setDescription('No hay mensajes en este Servidor.'))
     .then(m => m.delete( { timeout: 4000 } ))
 
+    if(chat.map(e => e.mensaje).length > 2000) {
+        client.chat.delete(message.guild.id)
+        return message.channel.send(new Discord.MessageEmbed().setDescription('Chat Reset.'))
+    }
+
     const embed = new Discord.MessageEmbed()
     .setAuthor('Light Chat', client.user.displayAvatarURL({ size: 2048, format: 'png', dynamic: true }))
-    .setDescription(`\`\`\`ini\n${chat.map(x => `[${x.hora}][${x.autor}] ${x.mensaje.length >= 131}`).reverse().slice(0, 10).join('\n')}\n\`\`\``)
+    .setDescription(`\`\`\`ini\n${chat.map(x => `[${x.hora}][${x.autor}] ${x.mensaje}`).reverse().slice(0, 10).join('\n')}\n\`\`\``)
     .setImage('https://img-17.ccm2.net/gpLveMOXJfvAZNBLlK3913vZl_w=/1634x/55e95dd9db6c4123b444fe070e9ef5d0/ccm-faq/Teclado_2.png')
     .setColor('FFD788')
     message.channel.send(embed)
