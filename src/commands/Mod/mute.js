@@ -20,9 +20,15 @@ module.exports = {
         message.guild.channels.cache.forEach(rol => rol.updateOverwrite(Rol, { SEND_MESSAGES: false }))
     }
 
+    try {
+
     User.roles.add(Rol.id)
 
     message.channel.send(new Discord.MessageEmbed().setDescription(`${User.user.tag} fue Muteado.`))
+
+    } catch(error) {
+        return message.channel.send(new Discord.MessageEmbed().setDescription('Hubo un error al intentar Mutear.'))
+    }
 
     }
 }
