@@ -1,8 +1,8 @@
 module.exports = {
     name: 'editsnipe',
-    description: 'Ver mensajes editados',
+    description: 'Mostrar el Mensaje antes de ser Editado.',
     aliases: ['ens'],
-    categoria: 'Información',
+    categoria: 'Utilidad',
     usage: 'editsnipe | editsnipe <canal>',
     execute(message, client, args) {
 

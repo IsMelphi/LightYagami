@@ -1,9 +1,9 @@
-                    module.exports = {
+module.exports = {
     name: 'say',
-    description: 'Repite tu texto',
+    description: 'Repitir tu Texto',
     usage: 'say <texto>',
     aliases: ['decir'],
-    categoria: 'Diversión',
+    categoria: 'General',
     execute(message, client, args) {
 
     if(!args[0]) {

@@ -1,6 +1,6 @@
 module.exports = {
     name: 'snipe',
-    description: 'Ver mensajes eliminados',
+    description: 'Muestra el ultimo mensaje eliminado.',
     usage: 'snipe | snipe <canal>',
     aliases: [],
     categoria: 'Utilidad',

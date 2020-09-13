@@ -1,6 +1,6 @@
 module.exports = {
     name: 'setprefix',
-    description: 'Cambiar de Prefix a Abismo.',
+    description: 'Cambiar el Prefix de Light Yagami en tu Servidor.',
     usage: 'setprefix <prefix>',
     aliases: ['sp'],
     categoria: 'Configuración',

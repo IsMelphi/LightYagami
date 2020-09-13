@@ -1,9 +1,9 @@
 module.exports = {
     name: 'help',
-    description: 'Información de los Comandos.',
+    description: 'Ayuda e Información de Light Yagami',
     aliases: ['ayuda'],
     usage: 'help <comando>',
-    categoria: 'Utilidad',
+    categoria: 'General',
     async execute(message, client, args) {
 
     const Discord = require('discord.js')

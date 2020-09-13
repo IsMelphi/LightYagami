@@ -1,8 +1,9 @@
 module.exports = {
     name: 'checkinvite',
     aliases: ['ci'],
-    description: 'Ver usuarios con Invitaciones',
+    description: 'Ver a los Usuarios del Servidor con Invitaciones.',
     usage: 'checkinvite',
+    categoria: 'Utilidad',
     execute(message, client, args) {
 
     const Discord = require('discord.js')

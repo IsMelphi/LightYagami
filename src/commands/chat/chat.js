@@ -3,7 +3,7 @@ module.exports = {
     description: 'Chat de Light Yagami',
     aliases: [],
     usage: 'chat',
-    categoria: 'Diversión',
+    categoria: 'Chat',
     execute(message, client, args) {
 
     const Discord = require('discord.js')
