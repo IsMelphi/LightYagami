@@ -20,7 +20,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
     .setAuthor('Light Chat', client.user.displayAvatarURL({ size: 2048, format: 'png', dynamic: true }))
     .setDescription(`\`\`\`ini\n${chat.map(x => `[${x.hora}][${x.autor}] ${x.mensaje}`).reverse().slice(0, 10).join('\n')}\n\`\`\``)
-    .setImage('https://cdn.discordapp.com/attachments/752340829103849632/754742554540638228/pngegg.png')
+    .setFooter(`${message.guild.members.cache.random().displayName} Is Typing.`)
     .setColor('FFD788')
     message.channel.send(embed)
 
