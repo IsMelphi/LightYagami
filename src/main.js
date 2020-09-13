@@ -5,8 +5,8 @@ const client = new Discord.Client()
 const ascii = require('ascii-table')
 const table = new ascii().setHeading('Comando', 'Carpeta')
 
-const MongoDB = require('./src/database/main')
-const ModelPrefix = require('./src/database/models/Prefix')
+const MongoDB = require('./database/main')
+const ModelPrefix = require('./database/models/Prefix')
 
 client.commands = new Discord.Collection()
 client.snipes = new Map()
@@ -14,15 +14,15 @@ client.editsnipes = new Map()
 client.chat = new Map()
 
 function getDirectorios() {
-  return require('fs').readdirSync('./src/commands').filter(function subFolder(file) {
-    return require('fs').statSync(`./src/commands/${file}`).isDirectory()
+  return require('fs').readdirSync('./commands').filter(function subFolder(file) {
+    return require('fs').statSync(`./commands/${file}`).isDirectory()
   })
 }
 
-const cmdFiles = require('fs').readdirSync('./src/commands').filter(file => file.endsWith('.js'))
+const cmdFiles = require('fs').readdirSync('./commands').filter(file => file.endsWith('.js'))
 
 for (const Folder of getDirectorios()) {
-  const FolderFile = require('fs').readdirSync(`./src/commands/${Folder}`).filter(end => end.endsWith('.js'))
+  const FolderFile = require('fs').readdirSync(`./commands/${Folder}`).filter(end => end.endsWith('.js'))
   for (const File of FolderFile) {
     cmdFiles.push([Folder, File])
   }
@@ -31,9 +31,9 @@ for (const Folder of getDirectorios()) {
 for (const file of cmdFiles) {
   let cmd;
   if(Array.isArray(file)) {
-    cmd = require(`./src/commands/${file[0]}/${file[1]}`)
+    cmd = require(`./commands/${file[0]}/${file[1]}`)
   } else {
-    cmd = require(`./src/commands/${file}`)
+    cmd = require(`./commands/${file}`)
   }
   client.commands.set(cmd.name, cmd)
   table.addRow(cmd.name, file[0])
