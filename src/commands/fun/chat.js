@@ -13,7 +13,7 @@ module.exports = {
     .then(m => m.delete( { timeout: 4000 } ))
 
     const embed = new Discord.MessageEmbed()
-    .setTitle('Light Chat', client.user.displayAvatarURL({ size: 2048, format: 'png', dynamic: true }))
+    .setAuthor('Light Chat', client.user.displayAvatarURL({ size: 2048, format: 'png', dynamic: true }))
     .setDescription(`\`\`\`ini\n${chat.map(x => `[${x.hora}][${x.autor}] ${x.mensaje}`).reverse().join('\n')}\n\`\`\``)
     .setColor('FFD788')
     message.channel.send(embed)
