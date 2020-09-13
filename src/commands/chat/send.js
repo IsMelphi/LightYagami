@@ -17,6 +17,10 @@ module.exports = {
         return message.channel.send(new Discord.MessageEmbed().setDescription('Links :('))
     }
 
+    if(['```', '`'].some(bug => message.content.toLowerCase().includes(bug))) {
+        return message.channel.send(new Discord.MessageEmbed().setDescription('N0'))
+    }
+
     if(!client.chat.has(message.guild.id)) client.chat.set(message.guild.id, [])
     client.chat.get(message.guild.id).push({autor: message.author.tag, mensaje: args.join(' '), hora: Hora})
 
