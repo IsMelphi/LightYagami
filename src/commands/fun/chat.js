@@ -12,8 +12,8 @@ module.exports = {
 
     if(!chat) return message.channel.send(new Discord.MessageEmbed().setDescription('No hay mensajes en este Servidor.'))
     
-    const mensaje = chat.map(mensaje => mensaje.mensaje)
-    const autor = chat.map(autor => autor.autor)
+    const mensaje = chat.map(mensaje => mensaje.mensaje).join('\n')
+    const autor = chat.map(autor => autor.autor).join('\n')
 
     message.channel.send(`[${Hora}][${autor}]: ${mensaje}`, { code: 'ini' })
 
