@@ -12,6 +12,7 @@ client.commands = new Discord.Collection()
 client.snipes = new Map()
 client.editsnipes = new Map()
 client.chat = new Map()
+client.mensajes = new Map()
 
 function getDirectorios() {
   return require('fs').readdirSync('./src/commands').filter(function subFolder(file) {
@@ -83,6 +84,29 @@ client.on('guildDelete', async (guild) => {
 client.on('message', async (message) => {
 
   if(message.author.bot) return;
+
+  if(!client.mensajes.has(message.channel.id)) {
+    client.mensajes.set(message.channel.id, {
+      mensaje: message.content.toLowerCase(),
+      contador: 1
+    })
+  } else {
+    const { mensaje, contador } = client.mensajes.get(message.guild.id)
+    if(mensaje !== message.content.toLowerCase()) {
+      client.mensajes.delete(message.guild.id)
+    } else {
+      client.mensaje.set(message.channel.id, {
+        contador: contador + 1,
+        mensaje: mensaje
+      })
+    }
+
+    if(contador > 3) {
+      client.chat.delete(message.guild.id)
+      return message.channel.send(mensaje)
+    }
+
+  }
 
   const PrePrefix = await ModelPrefix.findOne({ GuildID: message.guild.id }).exec()
   const Prefix = PrePrefix ? PrePrefix.Prefix : 'lg!'
