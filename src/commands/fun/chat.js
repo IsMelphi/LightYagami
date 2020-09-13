@@ -15,14 +15,6 @@ module.exports = {
     const mensaje = chat.map(mensaje => mensaje.mensaje).join('\n')
     const autor = chat.map(autor => autor.autor).join('\n')
 
-    if(mensaje.length > 2) {
-        mensaje.join('\n')
-    }
-
-    if(autor.length > 2) {
-        mensaje.join('\n')
-    }
-
     message.channel.send(`[${Hora}][${autor}]: ${mensaje}`, { code: 'ini' })
 
     }
