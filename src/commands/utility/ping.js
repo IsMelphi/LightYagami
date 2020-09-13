@@ -10,7 +10,7 @@ module.exports = {
 
     message.channel.send(
         new Discord.MessageEmbed()
-        .setDescription(`Envio de Mensaje: **${Math.floor(Date.now() - message.createdTimestamp)}**\nLight Yagami Ping: **${client.ws.ping}**`)
+        .setDescription(`[📨] Envio de Mensaje: **${Math.floor(Date.now() - message.createdTimestamp)}ms**\n[🛰️] Light Ping: **${client.ws.ping}ms**`)
         .setColor('RANDOM')
     )
 
