@@ -17,7 +17,7 @@ module.exports = {
     const Rol = message.guild.roles.cache.find(role => role.name == 'LightYagami-Muted')
     if(!Rol) {
         await message.guild.roles.create({ data: { name: 'LightYagami-Muted' } })
-        message.guild.channels.cache.forEach(role => role.updateOverwrite(Rol, { SEND_MESSAGES: false }))
+        message.guild.channels.cache.forEach(rol => rol.updateOverwrite(Rol, { SEND_MESSAGES: false }))
     }
 
     User.roles.add(Rol.id)
