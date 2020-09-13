@@ -1,23 +1,28 @@
 module.exports = {
+    
     clean: function clean(text) {
         if (typeof text === 'string')
         return text
         .replace(/`/g, '`' + String.fromCharCode(8203))
         .replace(/@/g, '@' + String.fromCharCode(8203))
-        else return text
+    else return text
                 
-        },
-    hora: function Hora() {
-        fecha = new Date()
-        hora = fecha.getHours()
-        minutos = fecha.getMinutes() 
-        if(hora < 10) {
-        hora = `0${hora}`
+    },
+    
+    hora: function Time() {
+
+        Tiempo = new Date()
+        Hora = Tiempo.getHours()
+        Minuto = Tiempo.getMinutes()
+
+        if(Hora < 10) {
+            Hora = `0${Hora}`
         }
-        if(minutos < 10) {
-        minutos = `0${minutos}`
+
+        if(Minuto < 10) {
+            Minuto = `0${Minuto}`
         }
-       
-        return `${hora}:${minutos}`
+
+        return `${Hora}:${Minuto}`
     }
 }
