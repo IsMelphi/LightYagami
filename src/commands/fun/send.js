@@ -7,6 +7,9 @@ module.exports = {
     execute(message, client, args) {
 
     const Discord = require('discord.js')
+ 
+    if(!args[0]) return message.channel.send(new Discord.MessageEmbed().setDescription('Que mensajes enviaras?'))
+
     const Objeto = { autor: message.author.tag, mensaje: args.join(' ') }
 
     client.chat.set(message.guild.id, Objeto)

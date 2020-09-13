@@ -8,22 +8,11 @@ module.exports = {
 
     const Discord = require('discord.js')
     const mensajes = client.chat.get(message.guild.id)
+    const Hora = require('../../utils/Utils').hora()
 
-    function Hora() {
-        fecha = new Date()
-        hora = fecha.getHours()
-        minutos = fecha.getMinutes() 
-        if(hora < 10) {
-        hora = `0${hora}`
-        }
-        if(minutos < 10) {
-        minutos = `0${minutos}`
-        }
-       
-        return `${hora}:${minutos}`
-    }
+    if(!mensajes) return message.channel.send(new Discord.MessageEmbed().setDescription('No hay mensajes en este Servidor.'))
 
-    message.channel.send(`[${Hora()}][${mensajes.autor}]: ${mensajes.mensaje}`, { code: 'ini' })
+    message.channel.send(`[${Hora}][${mensajes.autor}]: ${mensajes.mensaje}`, { code: 'ini' })
 
     }
 }

@@ -17,6 +17,7 @@ module.exports = {
         .addField('Comandos de Información', '`help` `avatar` `snipe` `editsnipe` `serverinfo`')
         .addField('Comandos de Diversión', '`say` `meme`')
         .addField('Comandos de Configuración', '`setprefix`')
+        .addField('Comandos en Obra', '`send` `chat`')
         .setColor('RANDOM')
        return message.channel.send(embed)
     }
