@@ -10,8 +10,6 @@ module.exports = {
     const chat = client.chat.get(message.guild.id)
 
     if(!chat) return message.channel.send(new Discord.MessageEmbed().setDescription('No hay mensajes en este Servidor.'))
-    
-    const mensaje = chat.map(mensaje => mensaje.mensaje).reverse().join('\n')
 
     message.channel.send(`${chat.map(x => `[${x.hora}][${x.autor}]: ${x.mensaje}`).reverse().join('\n')}`, { code: 'ini' })
 
